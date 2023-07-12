@@ -1,8 +1,14 @@
 #include <stdio.h>
 
+void tabela(){
+  printf("\nFUNÇÕES\t\tCÓDIGO");
+  printf("\nAfim\t\t  1");
+  printf("\nQuadrática\t  2\n");
+}
+
 int afim(){
   int a, b, x, y;
-  printf("Digite o valor de a: ");
+  printf("\nDigite o valor de a: ");
   scanf("%d",&a);
   printf("Digite o valor de b: ");
   scanf("%d",&b);
@@ -20,7 +26,24 @@ int afim(){
   return 0;
 }
 
+int quadratica(){
+  return 0;
+}
+
 int main() {
-  afim();
+  int code;
+  tabela();
+  printf("\nDigite o código de qual função você deseja trabalhar: ");
+  scanf("%d",&code);
+  switch(code){
+    case 1:
+      afim();
+    break;
+    case 2:
+      quadratica();
+    break;
+    default:
+      printf("\nVocê digitou um código inválido!");
+  }
   return 0;
 }

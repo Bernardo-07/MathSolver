@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 void tabela(){
   printf("\nFUNÇÕES\t\tCÓDIGO");
@@ -28,6 +29,7 @@ int afim(){
 
 int quadratica(){
   int a, b, c, x, y;
+  float delta, x1, x2;
   int code;
   printf("\nDigite o valor de a: ");
   scanf("%d",&a);
@@ -35,7 +37,7 @@ int quadratica(){
   scanf("%d",&b);
   printf("Digite o valor de c: ");
   scanf("%d",&c);
-  printf("\nQual operação você deseja realizar?\n1-lei de Formação\n2-Imagem de um x\n3-Ponto Crítico\n-> ");
+  printf("\nQual operação você deseja realizar?\n1-lei de Formação\n2-Imagem de um x\n3-Raízes\n4-Ponto Crítico\n-> ");
   scanf("%d",&code);
   switch(code){
     case 1: 
@@ -96,8 +98,14 @@ int quadratica(){
   }
     break;
     case 2:
+
     break;
     case 3:
+      delta = (b*b)-(4*a*c);
+      x1 = (-b + sqrt(delta))/(2*a);
+      x2 = (-b - sqrt(delta))/(2*a);
+      printf("\nAs raízes da função são %.2f e %.2f", x1, x2);   
+    break;
     default:
       printf("código inválido!");
   }

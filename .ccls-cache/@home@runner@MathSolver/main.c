@@ -13,6 +13,7 @@ int afim(){
   scanf("%d",&a);
   printf("Digite o valor de b: ");
   scanf("%d",&b);
+  printf("\n");
   if(b>0){
     printf("lei de Formação: f(x) = %dx + %d", a, b);
   }else if(b==0){
@@ -29,7 +30,7 @@ int afim(){
 
 int quadratica(){
   int a, b, c, x, y;
-  float delta, x1, x2;
+  float delta, x1, x2, xv, yv;
   int code;
   printf("\nDigite o valor de a: ");
   scanf("%d",&a);
@@ -39,6 +40,7 @@ int quadratica(){
   scanf("%d",&c);
   printf("\nQual operação você deseja realizar?\n1-lei de Formação\n2-Imagem de um x\n3-Raízes\n4-Ponto Crítico\n-> ");
   scanf("%d",&code);
+  delta = (b*b)-(4*a*c);
   switch(code){
     case 1: 
       if (a==1){
@@ -98,13 +100,24 @@ int quadratica(){
   }
     break;
     case 2:
-
+      printf("\nDigite o valor de x: ");
+      scanf("%d",&x);
+      y = a*(x*x) + (b*x) + c;
+      printf("f(%d) = %d", x, y);
     break;
     case 3:
-      delta = (b*b)-(4*a*c);
       x1 = (-b + sqrt(delta))/(2*a);
       x2 = (-b - sqrt(delta))/(2*a);
       printf("\nAs raízes da função são %.2f e %.2f", x1, x2);   
+    break;
+    case 4:
+      xv = (float) -b/(2*a);
+      yv = -delta/(4*a);
+      if(a>0){
+        printf("\nSua função possui concavidade voltada para cima, ou seja, o vértice da parábola é um ponto de mínimo: (%.2f,%.2f)",xv, yv);
+      }else{
+        printf("\nSua função possui concavidade voltada para baixo, ou seja, o vértice da parábola é um ponto de máximo: (%.2f,%.2f)",xv, yv);
+      }
     break;
     default:
       printf("código inválido!");

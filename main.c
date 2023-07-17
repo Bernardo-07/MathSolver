@@ -4,7 +4,10 @@
 void tabela(){
   printf("\nFUNÇÕES\t\tCÓDIGO");
   printf("\nAfim\t\t  1");
-  printf("\nQuadrática\t  2\n");
+  printf("\nQuadrática\t  2");
+  printf("\nLimites");
+  printf("\nDerivadas");
+  printf("\nIntegrais\n");
 }
 
 int afim(){
@@ -14,12 +17,24 @@ int afim(){
   printf("Digite o valor de b: ");
   scanf("%d",&b);
   printf("\n");
-  if(b>0){
-    printf("lei de Formação: f(x) = %dx + %d", a, b);
-  }else if(b==0){
-    printf("lei de Formação: f(x) = %dx", a);
+  if(a==1){
+    if(b>0){
+      printf("lei de Formação: f(x) = x + %d", b);
+    }else if(b==0){
+      printf("lei de Formação: f(x) = x");
+    }else{
+      printf("lei de Formação: f(x) = x %d", b);
+    }
+  }else if(a==0){
+    printf("A função dada é constante!\nf(x) = %d",b);
   }else{
-    printf("lei de Formação: f(x) = %dx %d", a, b);
+    if(b>0){
+      printf("lei de Formação: f(x) = %dx + %d", a, b);
+    }else if(b==0){
+      printf("lei de Formação: f(x) = %dx", a);
+    }else{
+      printf("lei de Formação: f(x) = %dx %d", a, b);
+    }
   }
   printf("\n\nDigite o valor de x: ");
   scanf("%d",&x);
